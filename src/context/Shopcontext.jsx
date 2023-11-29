@@ -9,19 +9,44 @@ const getdefaultcart = () =>{
     for (let index = 0; index < all_product.length+1; index++) {
        cart[index] =0;        
     }
+    return cart;
 }
 export const Shopcontextprovider = (props) =>{
 
     
     const[cartitems,setcartitems]=useState(getdefaultcart())
     
-    const addtocart=(itemid) => {
-        setcartitems((prev)=>({...prev,[itemid]:prev[itemid]+1}))
+    const addtocart=(itemId) => {
+        setcartitems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
     }
-    const removefromcart=(itemid) => {
-        setcartitems((prev)=>({...prev,[itemid]:prev[itemid]-1}))
+    const removefromcart=(itemId) => {
+        setcartitems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
     }
-    const contextvalue={all_product,cartitems,addtocart,removefromcart}
+    const getTotalcartamount=()=> {
+        let totalamount=0;
+        for(const item in cartitems)
+        {
+            if(cartitems[item]>0)
+            {
+                let iteminfo=all_product.find((product)=>product.id===Number(item))
+                totalamount += cartitems[item] * iteminfo.new_price;
+            }
+            return totalamount;
+        }
+    }
+    const getTotalcartitem=()=>{
+        let totalitem =0 ;
+        for(const item in cartitems)
+        {
+            if(cartitems[item]>0)
+            {
+                totalitem+=cartitems[item];
+
+            }
+        }
+        return totalitem;
+    }
+    const contextvalue={getTotalcartamount,getTotalcartitem,all_product,cartitems,addtocart,removefromcart}
 
     return (
        <Shopcontext.Provider value={contextvalue}>
