@@ -5,9 +5,9 @@ import all_product from '../components/assets/all_product'
 export const Shopcontext =createContext(null)
 
 const getdefaultcart = () =>{
-    let cart ={};
-    for (let index = 0; index < all_product.length+1; index++) {
-       cart[index] =0;        
+    let cart =[];
+    for (let i = 0; i < all_product.length+1; i++) {
+       cart[i] =0;        
     }
     return cart;
 }

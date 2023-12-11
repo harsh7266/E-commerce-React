@@ -5,16 +5,22 @@
     padding: 16px;
     /* box-shadow: 0px 1px 3px -2px black; */
 }
+.link{
+    text-decoration: none;
+}
 
 .nav-logo{
     display: flex;
     align-items: center;
     gap: 10px;
+    text-decoration: none;
 }
 .nav-logo p{
     font-size: 38px;
     color: #171717;
     font-weight: 600;
+    text-decoration: none;
+    
 }
 .nav-menu{
     display: flex;

@@ -14,10 +14,12 @@ import { Shopcontext } from '../../context/Shopcontext'
   return (
     <div className='navbar'>
 
-        <div className="nav-logo">
+       <Link className='link' to='/'>
+       <div className="nav-logo">
             <img src={logo} alt="" />
             <p>SHOPIFY</p>
         </div>
+        </Link> 
         <ul className="nav-menu">
           <li onClick={()=>{setmenu('shop')}}><Link style ={{textDecoration:'none'}} to='/'>Shop</Link> {menu==='shop'?<hr/>:<></>}</li>
           <li onClick={()=>{setmenu('mens')}}> <Link style ={{textDecoration:'none'}} to= '/mens'>Men</Link> {menu==='mens'?<hr/>:<></>}</li>
