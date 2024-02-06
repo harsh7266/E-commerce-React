@@ -4,23 +4,24 @@ import all_product from '../components/assets/all_product'
 
 export const Shopcontext =createContext(null)
 
-const getdefaultcart = () =>{
-    let cart =[];
-    for (let i = 0; i < all_product.length+1; i++) {
-       cart[i] =0;        
-    }
-    return cart;
-}
 export const Shopcontextprovider = (props) =>{
+
+    const getdefaultcart = () =>{
+        let cart =[];
+        for (let i = 0; i < all_product.length+1; i++) {
+           cart[i] =0;        
+        }
+        return cart;
+    }
 
     
     const[cartitems,setcartitems]=useState(getdefaultcart())
     
     const addtocart=(itemId) => {
-        setcartitems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
+        setcartitems((prev)=>({...prev,   [itemId]:prev[itemId]+1}   ))
     }
     const removefromcart=(itemId) => {
-        setcartitems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+        setcartitems((prev)=>({...prev,   [itemId]:prev[itemId]-1}   ))
     }
     const getTotalcartamount=()=> {
         let totalamount=0;
@@ -31,13 +32,13 @@ export const Shopcontextprovider = (props) =>{
                 let iteminfo=all_product.find((product)=>product.id===Number(item))
                 totalamount += cartitems[item] * iteminfo.new_price;
             }
-            return totalamount;
         }
+        return totalamount;
     }
     const getTotalcartitem=()=>{
         let totalitem =0 ;
-        for(const item in cartitems)
-        {
+        for(const item in cartitems){
+        
             if(cartitems[item]>0)
             {
                 totalitem+=cartitems[item];
@@ -54,4 +55,5 @@ export const Shopcontextprovider = (props) =>{
        </Shopcontext.Provider>
     )
 }
+
 

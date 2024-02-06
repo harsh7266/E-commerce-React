@@ -7,6 +7,8 @@ export const Cartitems = () => {
   const { getTotalcartamount,all_product, cartitems, removefromcart } = useContext(Shopcontext);
   return (
     <div className="cartitems">
+
+
       <div className="cartitems-format-main">
         <p>Products</p>
         <p>Title</p>
@@ -60,6 +62,9 @@ export const Cartitems = () => {
      </div>
 
      </div>
+
+
+     
     </div>
   )
 }

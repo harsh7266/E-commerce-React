@@ -6,6 +6,8 @@ import { Item } from '../item/Item'
 export const Newcollections = () => {
   return (
     <div className='new-collections'>
+
+
          <h1>NEW COLLECTIONS</h1>
           <hr/>
           <div className='collections'>
@@ -14,6 +16,9 @@ export const Newcollections = () => {
 
             })}
           </div>
+
+
     </div>
   )
 }
+

@@ -6,6 +6,8 @@ import { Item } from '../item/Item'
 export const Relatedproducts = () => {
   return (
         <div className='relatedproducts'>
+
+
             <h1>Related products</h1>
             <hr />
             <div className='relatedproducts-items'>
@@ -14,6 +16,9 @@ export const Relatedproducts = () => {
 
                   })}
             </div>
+
+
+            
         </div>
   )
 }

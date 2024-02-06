@@ -11,6 +11,8 @@ export const Productdisplay = (props) => {
     const {addtocart}=useContext(Shopcontext)
   return (
     <div className='productdisplay'>
+
+    
         <div className='productdisplay-left'>
         <div className='productdisplay-img-list'>
             <img src={product.image} alt='' />
@@ -48,11 +50,17 @@ export const Productdisplay = (props) => {
               <div>XL</div>
               <div>XXL</div>
             </div>
+
+
            </div>
              <button onClick={()=>{addtocart(product.id)}}>Add to cart</button>
              <p className='productdisplay-right-category'><span>Category :</span>Women ,Tshirt,Crop Top</p>
              <p className='productdisplay-right-category'><span>Tags :</span>Modern ,Latest</p>
         </div>
+
+
+
+
     </div>
   )
 }
